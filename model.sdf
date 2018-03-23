@@ -1,0 +1,98 @@
+<?xml version="1.0" ?>
+<sdf version="1.4">
+  <model name="omron">
+    <pose>0 1 0 1.5707 0 0 </pose>
+    <link name="sensor">
+      <inertial>
+      <mass>1.3</mass>
+      <pose> 0.03 0.04 0.05 0 0 0</pose>
+        <inertia>
+          <ixx>0.001567</ixx>
+          <iyy>0.001594</iyy>
+          <izz>0.001532</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>-0.0000</iyz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://omron/meshes/omron.dae</uri>
+            <scale>10 10 10</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://omron/meshes/omron.dae</uri>
+            <scale>10 10 10</scale>
+          </mesh>
+        </geometry>
+      </visual>
+        <!-- Add a ray sensor, and give it a name -->
+      <sensor type="ray" name="sensor">
+
+          <!-- Position the ray sensor based on the specification. Also rotate
+               it by 90 degrees around the X-axis so that the <horizontal> rays
+               become vertical -->
+          <pose>0.03 0.1 0.05 1.5707 0 0</pose>
+
+          <!-- Enable visualization to see the rays in the GUI -->
+          <visualize>true</visualize>
+
+          <!-- Set the update rate of the sensor -->
+          <update_rate>30</update_rate>
+
+          <ray>
+
+            <!-- The scan element contains the horizontal and vertical beams.
+                 We are leaving out the vertical beams for this tutorial. -->
+            <scan>
+
+              <!-- The horizontal beams -->
+              <horizontal>
+                <!-- The omron has 70 beams(samples) -->
+                <samples>70</samples>
+
+                <!-- Resolution is multiplied by samples to determine number of
+                     simulated beams vs interpolated beams. See:
+                     http://sdformat.org/spec?ver=1.6&elem=sensor#horizontal_resolution
+                     -->
+                <resolution>1</resolution>
+
+                <!-- Minimum angle in radians -->
+                <min_angle>-0.785398163</min_angle>
+
+                <!-- Maximum angle in radians -->
+                <max_angle>3.92699</max_angle>
+              </horizontal>
+            </scan>
+
+            <!-- Range defines characteristics of an individual beam -->
+            <range>
+
+              <!-- Minimum distance of the beam -->
+              <min>1.75</min>
+
+              <!-- Maximum distance of the beam -->
+              <max>10</max>
+
+              <!-- Linear resolution of the beam -->
+              <resolution>0.4</resolution>
+            </range>
+
+
+              <noise>
+                  <!-- Use gaussian noise -->
+                <type>gaussian</type>
+                <mean>0.0</mean>
+                <stddev>0.02</stddev>
+                </noise>
+              </ray>
+      </sensor>
+
+    </link>
+  </model>
+</sdf>
