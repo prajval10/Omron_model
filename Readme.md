@@ -4,17 +4,17 @@ The STEP model of the sensor was downloaded from [here](http://www.omron.com.au/
 
 ## Model properties
 
-Mass: 1.3 kg
+1. Mass: 1.3 kg
 
-Inertia Tensor is :
+2. Inertia Tensor is :
 
-| 0.001567 0.000000 0.000000 |
+    | 0.001567 0.000000 0.000000 |
 
-| 0.000000 0.001532 -0.000059 |
+    | 0.000000 0.001532 -0.000059 |
 
-| 0.000000 -0.000059 0.001594 |
+    | 0.000000 -0.000059 0.001594 |
 
-Sensor properties:
+3. Sensor properties:
 
 * Ray samples: 70
 * Min angle : 45 degree
