@@ -32,4 +32,4 @@ Clone the model into the gazebo models directory
 
 `cd .gazebo/models`
 
-`git clone git@gitlab.com:MS-Thesis/omron-model.git` 
+`git clone git@github.com:prajval10/omron-model.git` 
