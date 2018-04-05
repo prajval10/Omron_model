@@ -24,6 +24,7 @@ The STEP model of the sensor was downloaded from [here](http://www.omron.com.au/
 * Gaussian Noise: mean = 0; Standard deviation = 0.02
 
 ## Screenshot Images
+![Gazebo screen capture](https://preview.ibb.co/iVrkCH/omron.png)
 
 ## Installation
 
