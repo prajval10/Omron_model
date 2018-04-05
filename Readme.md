@@ -23,6 +23,8 @@ The STEP model of the sensor was downloaded from [here](http://www.omron.com.au/
 * Max Distance: 10m
 * Gaussian Noise: mean = 0; Standard deviation = 0.02
 
+## Screenshot Images
+
 ## Installation
 
 Clone the model into the gazebo models directory
